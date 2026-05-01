@@ -21,6 +21,9 @@ body{font-family:"Microsoft YaHei",Arial,sans-serif;background:#f5f5f5;}
 .btn{display:inline-block;background:#ff6b35;color:white;padding:12px 30px;text-decoration:none;border-radius:5px;}
 .section{padding:60px 0;background:white;}
 .section h2{text-align:center;margin-bottom:40px;font-size:32px;color:#1a2a4f;}
+.search-box{text-align:center;margin-bottom:30px;}
+.search-box input{width:60%;padding:12px 20px;font-size:16px;border:1px solid #ddd;border-radius:30px;outline:none;}
+.search-box input:focus{border-color:#ff6b35;}
 .products{display:flex;flex-wrap:wrap;gap:20px;}
 .product{flex:1;min-width:200px;text-align:center;padding:20px;background:#f9f9f9;border-radius:8px;}
 .product .img-box{width:100%;height:150px;background:#ddd;border-radius:8px;margin-bottom:15px;display:flex;align-items:center;justify-content:center;overflow:hidden;}
@@ -50,6 +53,37 @@ body{font-family:"Microsoft YaHei",Arial,sans-serif;background:#f5f5f5;}
 .btn-wechat{background:#07C160;color:white;padding:14px 30px;border:none;border-radius:5px;font-weight:bold;cursor:pointer;font-size:16px;}
 .back-link{display:inline-block;margin-top:30px;color:#1a2a4f;}
 </style>
+<script>
+function filterProducts() {
+    var input = document.getElementById('searchInput');
+    var filter = input.value.toLowerCase().trim();
+    var products = document.querySelectorAll('.product');
+    var hasResults = false;
+    products.forEach(function(p) {
+        var text = p.innerText.toLowerCase();
+        if (filter === "" || text.indexOf(filter) > -1) {
+            p.style.display = "";
+            hasResults = true;
+        } else {
+            p.style.display = "none";
+        }
+    });
+    var noResult = document.getElementById('noResultMsg');
+    if (!hasResults && filter !== "") {
+        if (!noResult) {
+            var msg = document.createElement('div');
+            msg.id = 'noResultMsg';
+            msg.style.textAlign = 'center';
+            msg.style.padding = '40px';
+            msg.style.color = '#999';
+            msg.innerText = 'No products found';
+            document.querySelector('.products').parentNode.appendChild(msg);
+        }
+    } else if (noResult) {
+        noResult.remove();
+    }
+}
+</script>
 </head>
 <body>
 <div class="header"><div class="container">
@@ -67,7 +101,10 @@ body{font-family:"Microsoft YaHei",Arial,sans-serif;background:#f5f5f5;}
     <h1>Range Cooker Supplier</h1>
     <a href="mailto:1594423692@qq.com" class="btn">Get Quote</a>
 </div></div>
-<div id="products" class="section"><div class="container"><h2>Products</h2><div class="products">
+<div id="products" class="section"><div class="container">
+    <h2>Products</h2>
+    <div class="search-box"><input type="text" id="searchInput" placeholder="🔍 Search products..." onkeyup="filterProducts()"></div>
+    <div class="products">
 <div class="product">
     <div class="img-box"><img src="images/main1.jpg"></div>
     <h3>Stainless Steel Range Cooker</h3>
@@ -92,9 +129,12 @@ body{font-family:"Microsoft YaHei",Arial,sans-serif;background:#f5f5f5;}
     <p>High power for commercial kitchen</p>
     <a href="product_4_en.html" class="btn-small">Details</a>
 </div></div></div></div>
-<div id="about" class="section"><div class="container"><h2>About Us</h2><div class="about">Heng & Li is a professional manufacturer and exporter of kitchen appliances, based in Foshan, Guangdong, China. Our main products include range cookers, gas cookers, and electric ovens. We are committed to providing high-quality products, reliable service, and competitive prices. Feel free to contact us for more details.</div></div></div>
-<div id="contact" class="section"><div class="container"><h2>Contact Us</h2>
+<div id="about" class="section"><div class="container"><h2>关于我们</h2><div class="about">恒与丽外贸是一家专业从事厨房电器研发、生产和出口的现代化企业。公司位于中国广东佛山，主营产品包括连体烤箱灶、燃气灶、电烤箱等。我们拥有成熟的生产线、严格的质量控制体系，以及多年的出口经验。产品远销欧美、东南亚、中东等市场。我们坚持以客户为中心，以品质为根本，致力于为全球客户提供高性价比的产品与专业服务。欢迎联系我们获取更多产品信息或定制方案。</div></div></div>
+<div id="contact" class="section"><div class="container"><h2>联系我们</h2>
 <div class="contact-bar"><div><h3>📞</h3><p>13726719090</p></div>
 <div><h3>📧</h3><p>1594423692@qq.com</p></div>
 <div><h3>💬</h3><p>flora20220623</p></div>
-<div><h3>📍</h3><p>Foshan, Guangdong, China</p></div></div></div></div><div class="footer"><div class="container"><p>© 恒与丽外贸</p></div></div></body></html>
+<div><h3>📍</h3><p>中国·广东佛山</p></div></div></div></div>
+<div class="footer"><div class="container"><p>© 恒与丽外贸</p></div></div>
+</body>
+</html>
