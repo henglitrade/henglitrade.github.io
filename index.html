@@ -1,18 +1,18 @@
 <!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml">
+<html lang="zh-CN">
 <head>
 <meta charset="UTF-8">
 <title>恒与丽外贸 - 专业连体烤箱灶供应商</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <style>
 *{margin:0;padding:0;box-sizing:border-box;}
 body{font-family:'Microsoft YaHei',Arial,sans-serif;background:#f5f5f5;}
 .header{background:#1a2a4f;color:white;padding:20px 0;}
 .container{width:1200px;margin:0 auto;overflow:hidden;}
+@media (max-width:768px){.container{width:95%;}}
 .logo{float:left;font-size:28px;font-weight:bold;}
-.logo span{color:#ff6b35;}
 .logo small{font-size:14px;color:#ccc;display:block;}
 .contact-info{float:right;text-align:right;font-size:14px;}
-.contact-info p{margin:5px 0;}
 .lang-switch{float:right;margin-right:20px;margin-top:5px;}
 .lang-switch a{color:#ff6b35;text-decoration:none;}
 .nav{background:#0f1a33;padding:12px 0;}
@@ -20,33 +20,29 @@ body{font-family:'Microsoft YaHei',Arial,sans-serif;background:#f5f5f5;}
 .nav a:hover{background:#ff6b35;}
 .banner{background:linear-gradient(135deg,#1a2a4f,#2a3a6f);color:white;text-align:center;padding:80px 0;}
 .banner h1{font-size:48px;margin-bottom:20px;}
-.banner p{font-size:20px;margin-bottom:30px;}
 .btn{display:inline-block;background:#ff6b35;color:white;padding:12px 30px;text-decoration:none;border-radius:5px;}
 .section{padding:60px 0;background:white;}
 .section h2{text-align:center;margin-bottom:40px;font-size:32px;color:#1a2a4f;}
-.products{display:flex;justify-content:space-between;flex-wrap:wrap;}
-.product{width:23%;text-align:center;padding:20px;background:#f9f9f9;border-radius:8px;}
-.product .img-box{width:100%;height:180px;background:#ddd;border-radius:8px;margin-bottom:15px;display:flex;align-items:center;justify-content:center;color:#999;}
-.product h3{margin:15px 0 10px;color:#1a2a4f;}
+.products{display:flex;flex-wrap:wrap;gap:20px;}
+.product{flex:1;min-width:220px;text-align:center;padding:20px;background:#f9f9f9;border-radius:8px;}
+.product .img-box{width:100%;height:180px;background:#ddd;border-radius:8px;margin-bottom:15px;display:flex;align-items:center;justify-content:center;overflow:hidden;}
+.product .img-box img{width:100%;height:100%;object-fit:cover;}
+.product h3{margin:15px 0 10px;color:#1a2a4f;font-size:18px;}
+.product p{color:#666;font-size:14px;margin-bottom:15px;}
+.product .btn-small{display:inline-block;padding:8px 20px;background:#ff6b35;color:white;text-decoration:none;border-radius:5px;font-size:14px;}
 .about{padding:30px;background:#f9f9f9;border-radius:10px;line-height:1.8;}
-.contact-bar{display:flex;justify-content:space-between;background:#1a2a4f;color:white;padding:40px;border-radius:10px;}
-.contact-bar div{flex:1;text-align:center;}
+.contact-bar{display:flex;flex-wrap:wrap;justify-content:space-between;background:#1a2a4f;color:white;padding:40px;border-radius:10px;}
+.contact-bar div{flex:1;text-align:center;min-width:120px;}
 .contact-bar h3{margin-bottom:15px;color:#ff6b35;}
 .footer{background:#0f1a33;color:#999;text-align:center;padding:20px;font-size:12px;}
-@media (max-width:768px){.logo,.contact-info{float:none;text-align:center;}.product{width:48%;margin-bottom:15px;}.contact-bar{flex-direction:column;}}
 </style>
 </head>
 <body>
 
 <div class="header">
     <div class="container">
-        <div class="lang-switch">
-            <a href="index_en.html">English</a>
-        </div>
-        <div class="logo">
-            恒与丽外贸<br>
-            <small>Heng & Li International Trade</small>
-        </div>
+        <div class="lang-switch"><a href="index_en.html">English</a></div>
+        <div class="logo">恒与丽外贸<br><small>Heng & Li International Trade</small></div>
         <div class="contact-info">
             <p>📞 电话：13726719090</p>
             <p>📧 邮箱：1594423692@qq.com</p>
@@ -55,79 +51,70 @@ body{font-family:'Microsoft YaHei',Arial,sans-serif;background:#f5f5f5;}
     </div>
 </div>
 
-<div class="nav">
-    <div class="container">
-        <a href="#">首页</a>
-        <a href="#">关于我们</a>
-        <a href="#">产品展示</a>
-        <a href="#">新闻动态</a>
-        <a href="#">联系我们</a>
-    </div>
-</div>
+<div class="nav"><div class="container">
+    <a href="#">首页</a>
+    <a href="#about">关于我们</a>
+    <a href="#products">产品展示</a>
+    <a href="#contact">联系我们</a>
+</div></div>
 
-<div class="banner">
-    <div class="container">
-        <h1>专业连体烤箱灶供应商</h1>
-        <p>品质卓越 · 服务全球 · 值得信赖</p>
-        <a href="#" class="btn">获取报价 →</a>
-    </div>
-</div>
+<div class="banner"><div class="container">
+    <h1>专业连体烤箱灶供应商</h1>
+    <p>品质卓越 · 服务全球 · 值得信赖</p>
+    <a href="mailto:1594423692@qq.com" class="btn">获取报价 →</a>
+</div></div>
 
-<div class="section">
-    <div class="container">
-        <h2>热门产品</h2>
-        <div class="products">
-            <div class="product">
-                <div class="img-box">📷 产品图</div>
-                <h3>不锈钢连体烤箱灶</h3>
-                <p>5头燃气灶+电烤箱</p>
-            </div>
-            <div class="product">
-                <div class="img-box">📷 产品图</div>
-                <h3>搪瓷连体烤箱灶</h3>
-                <p>4头燃气灶+多功能烤箱</p>
-            </div>
-            <div class="product">
-                <div class="img-box">📷 产品图</div>
-                <h3>嵌入式连体烤箱灶</h3>
-                <p>节省空间，欧式设计</p>
-            </div>
-            <div class="product">
-                <div class="img-box">📷 产品图</div>
-                <h3>商用连体烤箱灶</h3>
-                <p>大功率，商用厨房首选</p>
-            </div>
+<div id="products" class="section"><div class="container">
+    <h2>产品展示</h2>
+    <div class="products">
+
+        <div class="product">
+            <div class="img-box"><img src="images/main1.jpg" alt="不锈钢连体烤箱灶" onerror="this.parentElement.innerHTML='📷 不锈钢连体烤箱灶'"></div>
+            <h3>不锈钢连体烤箱灶</h3>
+            <p>5头燃气灶+电烤箱</p>
+            <a href="product_1.html" class="btn-small">查看详情 →</a>
+        </div>
+        <div class="product">
+            <div class="img-box"><img src="images/main2.jpg" alt="搪瓷连体烤箱灶" onerror="this.parentElement.innerHTML='📷 搪瓷连体烤箱灶'"></div>
+            <h3>搪瓷连体烤箱灶</h3>
+            <p>4头燃气灶+多功能烤箱</p>
+            <a href="product_2.html" class="btn-small">查看详情 →</a>
+        </div>
+        <div class="product">
+            <div class="img-box"><img src="images/main3.jpg" alt="嵌入式连体烤箱灶" onerror="this.parentElement.innerHTML='📷 嵌入式连体烤箱灶'"></div>
+            <h3>嵌入式连体烤箱灶</h3>
+            <p>节省空间，欧式设计</p>
+            <a href="product_3.html" class="btn-small">查看详情 →</a>
+        </div>
+        <div class="product">
+            <div class="img-box"><img src="images/main4.jpg" alt="商用连体烤箱灶" onerror="this.parentElement.innerHTML='📷 商用连体烤箱灶'"></div>
+            <h3>商用连体烤箱灶</h3>
+            <p>大功率，商用厨房首选</p>
+            <a href="product_4.html" class="btn-small">查看详情 →</a>
         </div>
     </div>
-</div>
+</div></div>
 
-<div class="section">
-    <div class="container">
-        <h2>关于我们</h2>
-        <div class="about">
-            <p>恒与丽外贸（Heng & Li International Trade）是一家专业从事连体烤箱灶研发、生产和出口的现代化企业。公司位于中国广东省佛山市，依托珠三角完善的产业链优势，致力于为全球客户提供高品质、高性能的厨房电器产品。</p>
-            <p style="margin-top:15px">主要产品包括连体烤箱灶、燃气灶、电烤箱等，产品远销欧美、东南亚、中东等地区。我们坚持以客户为中心，以质量求生存，以创新促发展，期待与您携手共创美好未来！</p>
-        </div>
+<div id="about" class="section"><div class="container">
+    <h2>关于我们</h2>
+    <div class="about">
+        <p>恒与丽外贸是一家专业从事连体烤箱灶研发、生产和出口的现代化企业。公司位于广东佛山，产品远销欧美、东南亚、中东等地区。</p>
     </div>
-</div>
+</div></div>
 
-<div class="section">
-    <div class="container">
-        <h2>联系我们</h2>
-        <div class="contact-bar">
-            <div><h3>📞 电话</h3><p>13726719090</p></div>
-            <div><h3>📧 邮箱</h3><p>1594423692@qq.com</p></div>
-            <div><h3>💬 微信</h3><p>flora20220623</p></div>
-            <div><h3>📍 地址</h3><p>中国·广东佛山</p></div>
-        </div>
+<div id="contact" class="section"><div class="container">
+    <h2>联系我们</h2>
+    <div class="contact-bar">
+        <div><h3>📞 电话</h3><p>13726719090</p></div>
+        <div><h3>📧 邮箱</h3><p>1594423692@qq.com</p></div>
+        <div><h3>💬 微信</h3><p>flora20220623</p></div>
+        <div><h3>📍 地址</h3><p>中国·广东佛山</p></div>
     </div>
-</div>
+</div></div>
 
-<div class="footer">
-    <div class="container">
-        <p>版权所有 © 恒与丽外贸 | 专业连体烤箱灶供应商</p>
-    </div>
-</div>
+<div class="footer"><div class="container">
+    <p>版权所有 © 恒与丽外贸 | 专业连体烤箱灶供应商</p>
+</div></div>
 
 </body>
 </html>
