@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
-<head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=yes">
-<title>Heng & Li International Trade - Professional Range Cooker Supplier</title>
+<head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Heng & Li International Trade</title>
 <style>
 *{margin:0;padding:0;box-sizing:border-box;}
 body{font-family:"Microsoft YaHei",Arial,sans-serif;background:#f5f5f5;}
@@ -21,9 +21,6 @@ body{font-family:"Microsoft YaHei",Arial,sans-serif;background:#f5f5f5;}
 .btn{display:inline-block;background:#ff6b35;color:white;padding:12px 30px;text-decoration:none;border-radius:5px;}
 .section{padding:60px 0;background:white;}
 .section h2{text-align:center;margin-bottom:40px;font-size:32px;color:#1a2a4f;}
-.search-box{text-align:center;margin-bottom:30px;}
-.search-box input{width:60%;padding:12px 20px;font-size:16px;border:1px solid #ddd;border-radius:30px;outline:none;}
-.search-box input:focus{border-color:#ff6b35;}
 .products{display:flex;flex-wrap:wrap;gap:20px;}
 .product{flex:1;min-width:200px;text-align:center;padding:20px;background:#f9f9f9;border-radius:8px;}
 .product .img-box{width:100%;height:150px;background:#ddd;border-radius:8px;margin-bottom:15px;display:flex;align-items:center;justify-content:center;overflow:hidden;}
@@ -32,6 +29,8 @@ body{font-family:"Microsoft YaHei",Arial,sans-serif;background:#f5f5f5;}
 .product p{color:#666;font-size:14px;margin-bottom:15px;}
 .product .btn-small{display:inline-block;padding:8px 20px;background:#ff6b35;color:white;text-decoration:none;border-radius:5px;font-size:14px;}
 .about{padding:30px;background:#f9f9f9;border-radius:10px;line-height:1.8;}
+.factory-section{margin-top:30px;padding:20px;background:#fff9f0;border-radius:10px;}
+.factory-section h3{margin-bottom:15px;color:#1a2a4f;}
 .contact-bar{display:flex;flex-wrap:wrap;justify-content:space-between;background:#1a2a4f;color:white;padding:40px;border-radius:10px;}
 .contact-bar div{flex:1;text-align:center;min-width:120px;}
 .contact-bar h3{margin-bottom:15px;color:#ff6b35;}
@@ -39,7 +38,6 @@ body{font-family:"Microsoft YaHei",Arial,sans-serif;background:#f5f5f5;}
 .detail{padding:40px 0;background:white;}
 .detail h1{color:#1a2a4f;margin-bottom:20px;font-size:28px;}
 .main-image{text-align:center;margin-bottom:30px;}
-.main-image img{max-width:100%;max-height:400px;border-radius:10px;margin:0 5px;}
 .detail-images{display:flex;flex-wrap:wrap;gap:10px;margin:30px 0;justify-content:center;}
 .detail-images img{width:120px;height:120px;object-fit:cover;border-radius:8px;cursor:pointer;border:2px solid #ddd;}
 .detail-info{line-height:1.8;margin:30px 0;}
@@ -51,45 +49,13 @@ body{font-family:"Microsoft YaHei",Arial,sans-serif;background:#f5f5f5;}
 .btn-group{display:flex;flex-wrap:wrap;gap:15px;margin:30px 0;}
 .btn-wechat{background:#07C160;color:white;padding:14px 30px;border:none;border-radius:5px;font-weight:bold;cursor:pointer;font-size:16px;}
 .back-link{display:inline-block;margin-top:30px;color:#1a2a4f;}
-@media (max-width:768px){.search-box input{width:90%;}}
 </style>
-<script>
-function filterProducts() {
-    var input = document.getElementById('searchInput');
-    var filter = input.value.toLowerCase().trim();
-    var products = document.querySelectorAll('.product');
-    var hasResults = false;
-    products.forEach(function(product) {
-        var text = product.innerText.toLowerCase();
-        if (filter === "" || text.indexOf(filter) > -1) {
-            product.style.display = "";
-            hasResults = true;
-        } else {
-            product.style.display = "none";
-        }
-    });
-    var noResultMsg = document.getElementById('noResultMsg');
-    if (!hasResults && filter !== "") {
-        if (!noResultMsg) {
-            var msg = document.createElement('div');
-            msg.id = 'noResultMsg';
-            msg.style.textAlign = 'center';
-            msg.style.padding = '40px';
-            msg.style.color = '#999';
-            msg.innerText = 'No products found';
-            document.querySelector('.products').parentNode.appendChild(msg);
-        }
-    } else if (noResultMsg) {
-        noResultMsg.remove();
-    }
-}
-</script>
 </head>
 <body>
 <div class="header"><div class="container">
     <div class="lang-switch"><a href="index.html">中文</a></div>
     <div class="logo">Heng & Li International Trade<br><small>恒与丽外贸</small></div>
-    <div class="contact-info"><p>📞 电话：13726719090</p><p>📧 邮箱：1594423692@qq.com</p><p>💬 微信：flora20220623</p></div>
+    <div class="contact-info"><p>📞 13726719090</p><p>📧 1594423692@qq.com</p><p>💬 flora20220623</p></div>
 </div></div>
 <div class="nav"><div class="container">
     <a href="index.html">Home</a>
@@ -98,42 +64,37 @@ function filterProducts() {
     <a href="index.html#contact">Contact</a>
 </div></div>
 <div class="banner"><div class="container">
-    <h1>Professional Range Cooker Supplier</h1>
-    <p>Quality · Service · Trust</p>
-    <a href="mailto:1594423692@qq.com" class="btn">Get Quote →</a>
+    <h1>Range Cooker Supplier</h1>
+    <a href="mailto:1594423692@qq.com" class="btn">Get Quote</a>
 </div></div>
-<div id="products" class="section"><div class="container">
-    <h2>Products</h2>
-    <div class="search-box"><input type="text" id="searchInput" placeholder="🔍 Search products..." onkeyup="filterProducts()"></div>
-    <div class="products">
-<div class="product" data-name="stainless steel range cooker">
-    <div class="img-box"><img src="images/main1.jpg" alt="Stainless Steel Range Cooker"></div>
+<div id="products" class="section"><div class="container"><h2>Products</h2><div class="products">
+<div class="product">
+    <div class="img-box"><img src="images/main1.jpg"></div>
     <h3>Stainless Steel Range Cooker</h3>
     <p>5-burner gas hob + electric oven</p>
-    <a href="product_1_en.html" class="btn-small">Details →</a>
+    <a href="product_1_en.html" class="btn-small">Details</a>
 </div>
-<div class="product" data-name="enamel range cooker">
-    <div class="img-box"><img src="images/main2.jpg" alt="Enamel Range Cooker"></div>
+<div class="product">
+    <div class="img-box"><img src="images/main2.jpg"></div>
     <h3>Enamel Range Cooker</h3>
     <p>4-burner gas hob + multi-function oven</p>
-    <a href="product_2_en.html" class="btn-small">Details →</a>
+    <a href="product_2_en.html" class="btn-small">Details</a>
 </div>
-<div class="product" data-name="built-in range cooker">
-    <div class="img-box"><img src="images/main3.jpg" alt="Built-in Range Cooker"></div>
+<div class="product">
+    <div class="img-box"><img src="images/main3.jpg"></div>
     <h3>Built-in Range Cooker</h3>
     <p>Space-saving, European style</p>
-    <a href="product_3_en.html" class="btn-small">Details →</a>
+    <a href="product_3_en.html" class="btn-small">Details</a>
 </div>
-<div class="product" data-name="commercial range cooker">
-    <div class="img-box"><img src="images/main4.jpg" alt="Commercial Range Cooker"></div>
+<div class="product">
+    <div class="img-box"><img src="images/main4.jpg"></div>
     <h3>Commercial Range Cooker</h3>
     <p>High power for commercial kitchen</p>
-    <a href="product_4_en.html" class="btn-small">Details →</a>
-</div></div>
-</div></div>
-<div id="about" class="section"><div class="container"><h2>About Us</h2><div class="about"><p>Heng & Li is a professional manufacturer and exporter of range cookers.</p></div></div></div>
-<div id="contact" class="section"><div class="container"><h2>Contact Us</h2>
-<div class="contact-bar"><div><h3>📞 Tel</h3><p>13726719090</p></div>
-<div><h3>📧 Email</h3><p>1594423692@qq.com</p></div>
-<div><h3>💬 WeChat</h3><p>flora20220623</p></div>
-<div><h3>📍 Address</h3><p>Foshan, Guangdong, China</p></div></div></div></div><div class="footer"><div class="container"><p>版权所有 © 恒与丽外贸 | 专业连体烤箱灶供应商</p></div></div></body></html>
+    <a href="product_4_en.html" class="btn-small">Details</a>
+</div></div></div></div>
+<div id="about" class="section"><div class="container"><h2>About Us</h2><div class="about"></div></div></div>
+<div id="contact" class="section"><div class="container"><h2>Contact</h2>
+<div class="contact-bar"><div><h3>📞</h3><p>13726719090</p></div>
+<div><h3>📧</h3><p>1594423692@qq.com</p></div>
+<div><h3>💬</h3><p>flora20220623</p></div>
+<div><h3>📍</h3><p>Foshan, Guangdong, China</p></div></div></div></div><div class="footer"><div class="container"><p>© 恒与丽外贸</p></div></div></body></html>
