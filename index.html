@@ -21,6 +21,9 @@ body{font-family:"Microsoft YaHei",Arial,sans-serif;background:#f5f5f5;}
 .btn{display:inline-block;background:#ff6b35;color:white;padding:12px 30px;text-decoration:none;border-radius:5px;}
 .section{padding:60px 0;background:white;}
 .section h2{text-align:center;margin-bottom:40px;font-size:32px;color:#1a2a4f;}
+.search-box{text-align:center;margin-bottom:30px;}
+.search-box input{width:60%;padding:12px 20px;font-size:16px;border:1px solid #ddd;border-radius:30px;outline:none;}
+.search-box input:focus{border-color:#ff6b35;}
 .products{display:flex;flex-wrap:wrap;gap:20px;}
 .product{flex:1;min-width:200px;text-align:center;padding:20px;background:#f9f9f9;border-radius:8px;}
 .product .img-box{width:100%;height:150px;background:#ddd;border-radius:8px;margin-bottom:15px;display:flex;align-items:center;justify-content:center;overflow:hidden;}
@@ -48,7 +51,39 @@ body{font-family:"Microsoft YaHei",Arial,sans-serif;background:#f5f5f5;}
 .btn-group{display:flex;flex-wrap:wrap;gap:15px;margin:30px 0;}
 .btn-wechat{background:#07C160;color:white;padding:14px 30px;border:none;border-radius:5px;font-weight:bold;cursor:pointer;font-size:16px;}
 .back-link{display:inline-block;margin-top:30px;color:#1a2a4f;}
+@media (max-width:768px){.search-box input{width:90%;}}
 </style>
+<script>
+function filterProducts() {
+    var input = document.getElementById('searchInput');
+    var filter = input.value.toLowerCase().trim();
+    var products = document.querySelectorAll('.product');
+    var hasResults = false;
+    products.forEach(function(product) {
+        var text = product.innerText.toLowerCase();
+        if (filter === "" || text.indexOf(filter) > -1) {
+            product.style.display = "";
+            hasResults = true;
+        } else {
+            product.style.display = "none";
+        }
+    });
+    var noResultMsg = document.getElementById('noResultMsg');
+    if (!hasResults && filter !== "") {
+        if (!noResultMsg) {
+            var msg = document.createElement('div');
+            msg.id = 'noResultMsg';
+            msg.style.textAlign = 'center';
+            msg.style.padding = '40px';
+            msg.style.color = '#999';
+            msg.innerText = '没有找到相关产品';
+            document.querySelector('.products').parentNode.appendChild(msg);
+        }
+    } else if (noResultMsg) {
+        noResultMsg.remove();
+    }
+}
+</script>
 </head>
 <body>
 <div class="header"><div class="container">
@@ -67,31 +102,35 @@ body{font-family:"Microsoft YaHei",Arial,sans-serif;background:#f5f5f5;}
     <p>品质卓越 · 服务全球 · 值得信赖</p>
     <a href="mailto:1594423692@qq.com" class="btn">获取报价 →</a>
 </div></div>
-<div id="products" class="section"><div class="container"><h2>产品展示</h2><div class="products">
-<div class="product">
+<div id="products" class="section"><div class="container">
+    <h2>产品展示</h2>
+    <div class="search-box"><input type="text" id="searchInput" placeholder="🔍 搜索产品..." onkeyup="filterProducts()"></div>
+    <div class="products">
+<div class="product" data-name="不锈钢连体烤箱灶">
     <div class="img-box"><img src="images/main1.jpg" alt="不锈钢连体烤箱灶"></div>
     <h3>不锈钢连体烤箱灶</h3>
     <p>5头燃气灶+电烤箱</p>
     <a href="product_1_cn.html" class="btn-small">查看详情 →</a>
 </div>
-<div class="product">
+<div class="product" data-name="搪瓷连体烤箱灶">
     <div class="img-box"><img src="images/main2.jpg" alt="搪瓷连体烤箱灶"></div>
     <h3>搪瓷连体烤箱灶</h3>
     <p>4头燃气灶+多功能烤箱</p>
     <a href="product_2_cn.html" class="btn-small">查看详情 →</a>
 </div>
-<div class="product">
+<div class="product" data-name="嵌入式连体烤箱灶">
     <div class="img-box"><img src="images/main3.jpg" alt="嵌入式连体烤箱灶"></div>
     <h3>嵌入式连体烤箱灶</h3>
     <p>节省空间，欧式设计</p>
     <a href="product_3_cn.html" class="btn-small">查看详情 →</a>
 </div>
-<div class="product">
+<div class="product" data-name="商用连体烤箱灶">
     <div class="img-box"><img src="images/main4.jpg" alt="商用连体烤箱灶"></div>
     <h3>商用连体烤箱灶</h3>
     <p>大功率，商用厨房首选</p>
     <a href="product_4_cn.html" class="btn-small">查看详情 →</a>
-</div></div></div></div>
+</div></div>
+</div></div>
 <div id="about" class="section"><div class="container"><h2>关于我们</h2><div class="about"><p>恒与丽外贸是一家专业从事连体烤箱灶研发、生产和出口的现代化企业。</p></div></div></div>
 <div id="contact" class="section"><div class="container"><h2>联系我们</h2>
 <div class="contact-bar"><div><h3>📞 电话</h3><p>13726719090</p></div>

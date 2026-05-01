@@ -21,6 +21,9 @@ body{font-family:"Microsoft YaHei",Arial,sans-serif;background:#f5f5f5;}
 .btn{display:inline-block;background:#ff6b35;color:white;padding:12px 30px;text-decoration:none;border-radius:5px;}
 .section{padding:60px 0;background:white;}
 .section h2{text-align:center;margin-bottom:40px;font-size:32px;color:#1a2a4f;}
+.search-box{text-align:center;margin-bottom:30px;}
+.search-box input{width:60%;padding:12px 20px;font-size:16px;border:1px solid #ddd;border-radius:30px;outline:none;}
+.search-box input:focus{border-color:#ff6b35;}
 .products{display:flex;flex-wrap:wrap;gap:20px;}
 .product{flex:1;min-width:200px;text-align:center;padding:20px;background:#f9f9f9;border-radius:8px;}
 .product .img-box{width:100%;height:150px;background:#ddd;border-radius:8px;margin-bottom:15px;display:flex;align-items:center;justify-content:center;overflow:hidden;}
@@ -48,7 +51,39 @@ body{font-family:"Microsoft YaHei",Arial,sans-serif;background:#f5f5f5;}
 .btn-group{display:flex;flex-wrap:wrap;gap:15px;margin:30px 0;}
 .btn-wechat{background:#07C160;color:white;padding:14px 30px;border:none;border-radius:5px;font-weight:bold;cursor:pointer;font-size:16px;}
 .back-link{display:inline-block;margin-top:30px;color:#1a2a4f;}
+@media (max-width:768px){.search-box input{width:90%;}}
 </style>
+<script>
+function filterProducts() {
+    var input = document.getElementById('searchInput');
+    var filter = input.value.toLowerCase().trim();
+    var products = document.querySelectorAll('.product');
+    var hasResults = false;
+    products.forEach(function(product) {
+        var text = product.innerText.toLowerCase();
+        if (filter === "" || text.indexOf(filter) > -1) {
+            product.style.display = "";
+            hasResults = true;
+        } else {
+            product.style.display = "none";
+        }
+    });
+    var noResultMsg = document.getElementById('noResultMsg');
+    if (!hasResults && filter !== "") {
+        if (!noResultMsg) {
+            var msg = document.createElement('div');
+            msg.id = 'noResultMsg';
+            msg.style.textAlign = 'center';
+            msg.style.padding = '40px';
+            msg.style.color = '#999';
+            msg.innerText = 'No products found';
+            document.querySelector('.products').parentNode.appendChild(msg);
+        }
+    } else if (noResultMsg) {
+        noResultMsg.remove();
+    }
+}
+</script>
 </head>
 <body>
 <div class="header"><div class="container">
@@ -65,7 +100,7 @@ body{font-family:"Microsoft YaHei",Arial,sans-serif;background:#f5f5f5;}
 <div class="detail"><div class="container">
     <h1>Stainless Steel Range Cooker</h1>
     <div class="main-image"><img src="images/main1.jpg" alt="主图"></div>
-    <div class="specs-table"><h3>📋 产品参数</h3><table><tr><td class="spec-key">Power</td><td class="spec-val">5.2kW</td></tr><tr><td class="spec-key">Size</td><td class="spec-val">900x600x850mm</td></tr><tr><td class="spec-key">Voltage</td><td class="spec-val">220V</td></tr><tr><td class="spec-key">Oven Capacity</td><td class="spec-val">70L</td></tr></table></div>
+    <div class="specs-table"><h3>📋 产品参数</h3><table><tr><td class="spec-key">Power</td><td class="spec-val">5.2kW</td></tr><tr><td class="spec-key">Size</td><td class="spec-val">900x600x850mm</td></tr><tr><td class="spec-key">Voltage</td><td class="spec-val">220V</td></tr><tr><td class="spec-key">Oven Capacity</td><td class="spec-val">70L</td></tr></td></div>
     <div class="detail-info"><iframe width="560" height="315" src="https://www.youtube.com/embed/您的视频ID" frameborder="0" allowfullscreen></iframe></div>
     <div class="detail-images"><img src="images/detail1-1.jpg" alt="detail" onclick="this.requestFullscreen()"><img src="images/detail1-2.jpg" alt="detail" onclick="this.requestFullscreen()"></div>
     <div class="btn-group">
